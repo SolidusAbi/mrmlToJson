@@ -248,12 +248,12 @@ function generateHashVersion () {
                     if (typeof obj[key][i] === 'string' && uuids[obj[key][i]]) {
                         obj[key][i] = hashify(uuids[obj[key][i]], true);
                     }
-                    else if (typeof obj[key][i] === 'object') {
+                    else if (typeof obj[key][i] === 'object' && obj[key][i] != null) {
                         obj[key][i] = hashify(obj[key][i], false);
                     }
                 }
             }
-            else if (typeof obj[key] === 'object') {
+            else if (typeof obj[key] === 'object' && obj[key] != null) {
                 obj[key] = hashify(obj[key], false);
             }
         }
